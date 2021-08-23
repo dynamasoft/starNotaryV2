@@ -4,10 +4,12 @@ import starNotaryArtifact from "../../build/contracts/StarNotary.json";
 const App = {
   web3: null,
   account: null,
-  meta: null,
+  meta: null,  
 
   start: async function() {
     const { web3 } = this;
+
+    debugger;
 
     try {
       // get contract instance
@@ -27,11 +29,13 @@ const App = {
   },
 
   setStatus: function(message) {
+    debugger;
     const status = document.getElementById("status");
     status.innerHTML = message;
   },
 
   createStar: async function() {
+    debugger;
     const { createStar } = this.meta.methods;
     const name = document.getElementById("starName").value;
     const id = document.getElementById("starId").value;
@@ -46,9 +50,11 @@ const App = {
 
 };
 
+debugger;
 window.App = App;
 
 window.addEventListener("load", async function() {
+  debugger;
   if (window.ethereum) {
     // use MetaMask's provider
     App.web3 = new Web3(window.ethereum);
@@ -60,4 +66,5 @@ window.addEventListener("load", async function() {
   }
 
   App.start();
+  debugger;
 });
