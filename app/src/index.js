@@ -7,18 +7,19 @@ const App = {
   meta: null,  
 
   start: async function() {
-    const { web3 } = this;
-
-    debugger;
+    const { web3 } = this;    
 
     try {
       // get contract instance
+      debugger
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = starNotaryArtifact.networks[networkId];
       this.meta = new web3.eth.Contract(
         starNotaryArtifact.abi,
         deployedNetwork.address,
       );
+
+      debugger;
 
       // get accounts
       const accounts = await web3.eth.getAccounts();
@@ -45,16 +46,18 @@ const App = {
 
   // Implement Task 4 Modify the front end of the DAPP
   lookUp: async function (){
-    
+    debugger;
+    const { lookUptokenIdToStarInfo } = this.meta.methods;    
+    const id = document.getElementById("lookid").value;
+    var starName = await lookUptokenIdToStarInfo(id).call();
+    App.setStatus("Star Name for id " + id + " is " + starName + ".");
   }
-
 };
 
-debugger;
 window.App = App;
 
 window.addEventListener("load", async function() {
-  debugger;
+  
   if (window.ethereum) {
     // use MetaMask's provider
     App.web3 = new Web3(window.ethereum);
@@ -65,6 +68,5 @@ window.addEventListener("load", async function() {
     App.web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:9545"),);
   }
 
-  App.start();
-  debugger;
+  App.start();  
 });

@@ -1,8 +1,8 @@
 pragma solidity >=0.4.24;
 
 //Importing openzeppelin-solidity ERC-721 implemented Standard
-import "../node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
-import "../node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol";
+import "../app/node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
+import "../app/node_modules/openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol";
 
 // StarNotary Contract declaration inheritance the ERC721 openzeppelin implementation
 contract StarNotary is ERC721Full {
