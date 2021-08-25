@@ -79,17 +79,17 @@ contract('StarNotary', (accs) => {
 
 // // Implement Task 2 Add supporting unit tests
 
-// it('6. can add the star name and star symbol properly', async() => {
-//     // 1. create a Star with different tokenId
-//     let instance = await StarNotary.deployed();
-//     let user3 = accounts[3];
-//     let starId = 3;    
-//     await instance.createStar('more awesome star', starId, {from: user3});    
+it('6. can add the star name and star symbol properly', async() => {
+    // 1. create a Star with different tokenId
+    let instance = await StarNotary.deployed();
+    let user3 = accounts[3];
+    let starId = 3;    
+    await instance.createStar('more awesome star', starId, {from: user3});    
     
-//     //2. Call the name and symbol properties in your Smart Contract and compare with the name and symbol provided
-//     assert.equal(await instance.name(), "SmittyMarketPlace");
-//     assert.equal(await instance.symbol(), "SMP");
-// });
+    //2. Call the name and symbol properties in your Smart Contract and compare with the name and symbol provided
+    assert.equal(await instance.name(), "SmittyMarketPlace");
+    assert.equal(await instance.symbol(), "SMP");
+});
 
 it('7. lets 2 users exchange stars', async() => {
     //1. create 2 Stars with different tokenId
