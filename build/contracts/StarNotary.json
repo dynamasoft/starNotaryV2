@@ -7963,8 +7963,7 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-08-23T12:22:23.465Z",
-  "networkType": "ethereum",
+  "updatedAt": "2021-08-25T01:02:53.133Z",
   "devdoc": {
     "methods": {
       "approve(address,uint256)": {
